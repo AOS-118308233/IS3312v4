@@ -71,8 +71,13 @@
     <br/>
     <br/>
     
+    <br/>
+    <h1 style = "text-align:center">Congratulations! Your order has been submitted!</h1>
+    <br/>
+    <h2 style = "text-align:center">Please check your email mail for you confirmation email with all delivery details</h2>
+    <br/>
+    <a class="btnGoHome" href="index.html">Return to Home Page</a>
     
-    <h1> Hello World </h1>
     
     <!-- Footer -->
     <footer class="py-5 bg-dark" id="footer">

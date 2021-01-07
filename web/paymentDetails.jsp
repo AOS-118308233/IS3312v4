@@ -71,8 +71,57 @@
     <br/>
     <br/>
     
+    <h2>Please enter your Payment Details</h2>
     
-    <h1> Hello World </h1>
+    <!-- Form taken from https://bootsnipp.com/forms after I built the form on the website -->
+    
+    <form class="form-horizontal">
+    <fieldset>
+
+    <div class="paymentDetails">
+<!-- Text input-->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="cardName">Cardholder's Name</label>  
+    <div class="col-md-4">
+        <input id="cardName" name="cardName" type="text" placeholder="Name" class="form-control input-md" required="">
+    </div>
+    </div>
+
+<!-- Text input-->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="cardNum">Card Number:</label>  
+    <div class="col-md-4">
+        <input id="cardNum" name="cardNum" type="text" placeholder="Card Number" class="form-control input-md" required="">
+    </div>
+    </div>
+
+<!-- Text input-->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="expDate">Expiry Date:</label>  
+    <div class="col-md-4">
+        <input id="expDate" name="expDate" type="text" placeholder="mm/yy" class="form-control input-md" required="">
+    </div>
+    </div>
+
+<!-- Text input-->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="cvv">CVV</label>  
+    <div class="col-md-4">
+        <input id="cvv" name="cvv" type="text" placeholder="CVV" class="form-control input-md" required="">
+    </div>
+    </div>
+
+<!-- Button -->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="submitOrder"></label>
+    <div class="col-md-4">
+        <button id="submitOrder" name="submitOrder" class="btn btn-primary">Submit Order</button>
+    </div>
+    </div>
+
+    </div>
+
+    </fieldset>
     
     <!-- Footer -->
     <footer class="py-5 bg-dark" id="footer">

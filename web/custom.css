@@ -42,7 +42,7 @@ and open the template in the editor.
     border-color: black;
 }
 
-.btnShopNow, #checkout, #continueShopping {
+.btnShopNow, #checkout, #continueShopping .btnGoHome  {
     background-color: #8AA994;
     display:inline-block;
     padding:0.3em 1.2em;
@@ -52,7 +52,7 @@ and open the template in the editor.
     color: white;
 }
 
-.btnShopNow:hover, #checkout:hover, #continueShopping:hover {
+.btnShopNow:hover, #checkout:hover, #continueShopping:hover  {
     color: black;
     border-color: black;
 } /* end of code from fdossena.com */
@@ -292,4 +292,16 @@ input:focus {
 
 #filters {
     float: right;
+}
+
+.payment {
+    text-align: center;
+}
+
+.fName, .lastName {
+    float: right !important;
+}
+
+.paymentDetails {
+    
 }
