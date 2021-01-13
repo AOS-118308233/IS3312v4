@@ -107,10 +107,12 @@
                     </div>
             </div>
         
-        
         </div>
         
     </div>
+    
+    <h3> Is this working? </h3>
+        
 
         <c:forEach items="${Product}" var="topProduct">
           <div class="col-lg-4 col-md-6 mb-4">
@@ -118,7 +120,7 @@
               <a href="#"><img class="card-img-top" src="resources/images/${topProduct.productImage}" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">${topProduct.productName}</a>
+                  <a href="viewProduct.jsp">${topProduct.productName}</a>
                 </h4>
                 <h5>${topProduct.price}</h5>
                 <p class="card-text">${topProduct.productDescription}</p>
@@ -129,7 +131,8 @@
         </c:forEach>      
               
 
-    
+    <br/>
+    <br/>
 
     <!-- /.container -->
 
