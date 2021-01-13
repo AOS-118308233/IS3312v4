@@ -73,36 +73,38 @@
     <br/>
     <br/>
        
-        <div class="container" id="LoginPageContainer">
-            <!-- Log In -->
-            <div class="container" id="login">
-                <div class="login" style="width: 500px; float:left; height:500px; background:#8AA994; margin:20px">
-                    <form class="form-signin" action="LoginServlet" method="POST">
-                        <input type="hidden" name="action" value="add">
-                        <br/>
-                        <br/>
-                        <br/>
-                        <h3 class="form-signin-heading">You need to be logged in to complete your purchase</h3>
-                        <br/>
-                        <h3 class="form-signin-heading"> Please Log In </h3>
-                        <input type="text" class="input-block-level" id="email" placeholder="Email Address">
-                        <br/>
-                        <br/>
-                        <input type="password" class="input-block-level" id="password" placeholder="Password">
-                        <br/>
-                        <label class="checkbox">
-                            <input type="checkbox" value="remember-me"> Remember me
-                        </label>
-                        <br>
-                        <a class="forgot-password" href="#">Forgot Password?</a>
-                        <br/>
-                        <br/>
-                        <input type="submit" id="SignIn" value="Login">
-                    </form>
-                 </div>
-            </div>
+    <div class="container" id="LoginPageContainer">
+     <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Sign In</h5>
+            <form class="form-signin" action="/IS3312v3/LoginServlet" method="post">
+              <div class="form-label-group">
+                <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
+                <label for="inputEmail">Email address</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+                <label for="inputPassword">Password</label>
+              </div>
+
+              <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">Remember password</label>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+        <!-- /.row -->
             
-            <!-- Sign Up - Goes to the same page anyway -->
+            <!-- Sign Up - Goes to the same page anyway 
                 <div class="signUp" style="width: 500px; float:right; height:500px; background:#8AA994; margin:20px">
                     <br/>
                     <br/>
@@ -116,12 +118,12 @@
                         <input type="text" class="input-block-level" name="email" placeholder="Email Address">
                         <br/>
                         <br/>
-                        <!-- Sign uP Button won't do anything a while, just a dummy link -->
+                        <!-- Sign uP Button won't do anything a while, just a dummy link 
                         <input type="submit" id="SignIn" value="Sign Up">
                     </form>
                 </div> 
-            </div> <!-- end of sign in container -->
-        </div> <!-- end of main container -->
+            </div>  end of sign in container 
+        </div> end of main container -->
                             
         <!-- Footer is not on the Login/cart/checkout pages because they'll be "secure pages" and 
                 in theory you won't be leaving those page (unless it's from a "continue shopping" button -->      
