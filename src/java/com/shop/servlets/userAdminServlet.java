@@ -32,28 +32,33 @@ public class userAdminServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-     
+        
         String action = request.getParameter("action");
-        UserManager uMan = new UserManager();
+        UserManager uServ = new UserManager();
+        
         String url = null;
+        
         if (action == null)
-            request.getRequestDispatcher("/Home").forward(request, response);
-        if (action.equals("listUsers")){
-            ArrayList<User> users = uMan.getAllUsers();
+            request.getRequestDispatcher("/adminHome.jsp").forward(request, response);
+        
+        if ("listUsers".equals(action)){
+            ArrayList<User> users = uServ.getAllUsers();
             request.setAttribute("users", users);
             request.getRequestDispatcher("/userAdmin.jsp").forward(request, response);
         }
-        if (action.equals("add")){
+        
+        if ("add".equals(action)){
             request.getRequestDispatcher("/addUser.jsp").forward(request, response);
         }
-        if (action.equals("insertUser")){
+        
+        if ("insertUser".equals(action)){
             insertUser(request,response);
-            ArrayList<User> users = uMan.getAllUsers();
+            ArrayList<User> users = uServ.getAllUsers();
             request.setAttribute("users", users);
             request.getRequestDispatcher("/userAdmin.jsp").forward(request, response);
         }
         else
-            request.getRequestDispatcher("/Home").forward(request, response);
+            request.getRequestDispatcher("/adminHome").forward(request, response);
        
     }
 
@@ -119,5 +124,4 @@ public class userAdminServlet extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-}    
-        
+}

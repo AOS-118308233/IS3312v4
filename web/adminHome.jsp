@@ -55,9 +55,14 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.jsp">Contact</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.jsp">Log In  <i class="fas fa-user-plus"></i></a>
-            </li>
+            <li class="nav-item active">
+                <c:if test="${empty SKUSER.firstName}">
+                    <a class="nav-link" href="login.jsp">Login <i class="fas fa-user-plus"></i></a>
+                </c:if>
+                <c:if test="${not empty SKUSER.firstName}">
+                    <a class="nav-link" href="login.jsp">Hi ${SKUSER.firstName}!</a>
+                </c:if>
+            </li>           
             <li class="nav-item">
               <a class="nav-link" href="cart.jsp">View Basket  <i class="fas fa-shopping-basket"></i></a>
             </li>
@@ -93,9 +98,38 @@
             </div>
 	</div> 
     
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-3">
+                    
+                    <h1 class="pt-4"> Administration Home </h3>   
+
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">Product Administration</a>
+                        <a href="userAdmin?action=listUsers" class="list-group-item">User Administration</a>
+                    </div>
+
+                </div>
+                <!-- /.col-lg-3 -->
+
+             
+
     
-            
-    <div class="container">
+                    </div><!-- comment -->
+                    <!-- /.row -->
+
+                </div>
+                <!-- /.col-lg-9 -->
+
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.container -->
+          
+  <!--  <div class="container">
         <h2>Revenue and Sales Reports</h2>
             <div class="row">
                 <div class="column">
@@ -110,7 +144,7 @@
     <div class="col-lg-3">
 
         <h1 class="my-4">Administrator Activities</h1>
-        <!-- This will be more useful in Part 2 where the admin can edit users, products etc, for now it's all dummy link -->
+        <!-- This will be more useful in Part 2 where the admin can edit users, products etc, for now it's all dummy link 
             <div class="list-group">
                 <a href="#" class="list-group-item">Create New User</a>
                 <a href="#" class="list-group-item">Update and Edit Current User Details</a>
@@ -120,7 +154,7 @@
                 <a href="#" class="list-group-item">Generate Sales Reports</a>
             </div>
     </div>
-    </center>
+    </center> -->
     
     </div> <!-- END OF MAIN DIV -->
   

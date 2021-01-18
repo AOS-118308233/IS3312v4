@@ -38,4 +38,8 @@ public class UserManager {
         return userList;
         
     }
+
+    public void insertUser(User newUser) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

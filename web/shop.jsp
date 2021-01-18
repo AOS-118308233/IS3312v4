@@ -63,7 +63,7 @@
                     <a class="nav-link" href="login.jsp">Login <i class="fas fa-user-plus"></i></a>
                 </c:if>
                 <c:if test="${not empty SKUSER.firstName}">
-                    <a class="nav-link" href="login.jsp">Hi ${SKUSER.firstName}</a>
+                    <a class="nav-link" href="login.jsp">Hi ${SKUSER.firstName}!</a>
                 </c:if>
             </li>           
             <li class="nav-item">

@@ -54,16 +54,18 @@ public class LoginServlet extends HttpServlet implements IConstants {
                  System.out.println("This is the second breakpoint");
             } else {
                 request.getSession(true).setAttribute(IConstants.SESSION_KEY_USER, user);
-                if (user.getUserType().equals(IConstants.USER_TYPE_ADMIN)) {
+                
+                
+                if (user.getUserType().equals(IConstants.USER_TYPE_GENERAL_USER)) {
+                    RequestDispatcher rd = request.getRequestDispatcher("/shop.jsp");
+                    rd.forward(request, response);    
+                } 
+                
+                else {
                     RequestDispatcher rd = request.getRequestDispatcher("/adminHome.jsp");
                     rd.forward(request, response);
-                } else if (user.getUserType().equals(IConstants.USER_TYPE_GENERAL_USER)) {
-                    RequestDispatcher rd = request.getRequestDispatcher("/shop.jsp");
-                    rd.forward(request, response);
-                } else {
-                    RequestDispatcher rd = request.getRequestDispatcher("/index.html");
-                    rd.forward(request, response);
-                }
+                } 
+
             }
         }
 

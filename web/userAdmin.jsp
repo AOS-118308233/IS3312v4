@@ -49,7 +49,6 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
               <a class="nav-link" href="index.html">Home</a>
-              <span class="sr-only">(current)</span>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="shop.jsp">Shop</a>
@@ -91,13 +90,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <c:forEach items="${users}" var="user">
-                                    <c:url value="/userAdmin" var="editUserUrl">
+                                <c:forEach items="${User}" var="User">
+                                    <c:url value="/userAdmin.jsp" var="editUserUrl">
                                         <c:param name="action" value="edit"/>
                                         <c:param name="id" value="${user.ID}"/>
                                     </c:url>
                                 <tr>
-                                    <td scope="row">${user.id}</th>
+                                    <td scope="row">${User.ID}</th>
                                     <td>${user.firstName}</td>
                                     <td>${user.lastName}</td>
                                     <td>${user.email}</td>

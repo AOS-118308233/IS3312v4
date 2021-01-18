@@ -12,10 +12,10 @@ INSERT INTO USERDATA(EMAIL, PASSWORD, FIRSTNAME, LASTNAME, USERTYPE)
 VALUES('admin@admin.com', 'admin', 'Admin', 'Admin', 'Admin');
 
 INSERT INTO USERDATA(EMAIL, PASSWORD, FIRSTNAME, LASTNAME, USERTYPE)
-VALUES('aoife@gmail.com', 'Aoife', 'O Sullivan', 'user1', 'GENUSER');
+VALUES('aoife@gmail.com', 'user1', 'Aoife', 'O Sullivan', 'GENUSER');
 
 INSERT INTO USERDATA(EMAIL, PASSWORD, FIRSTNAME, LASTNAME, USERTYPE)
-VALUES('bill@gmail.com', 'Bill', 'Emerson', 'user2', 'GENUSER');
+VALUES('bill@gmail.com', 'user2', 'Bill', 'Emerson', 'GENUSER');
 
 INSERT INTO PRODUCTS(PRODUCT_NAME, PRODUCT_DESCRIPTION, BRAND_NAME, PRICE, COLOUR, ANIMAL, IMAGE, CATEGORY)
 VALUES('Williams F1 Bear', 'George will make your kids happy, he is soft and snuggly, a very big hit with our customers. More than can be said for Williams over the last few years.', 'Williams F1', 'EUR24.95', 'Brown', 'Bear', 'williams.jpg', 'Brand');
