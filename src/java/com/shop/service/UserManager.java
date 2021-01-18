@@ -6,6 +6,7 @@
 package com.shop.service;
 import com.shop.DAO.UserDAO;
 import com.shop.model.User;
+import java.util.ArrayList;
 
 /**
  *
@@ -30,4 +31,11 @@ public class UserManager {
         else return null;
     }
     
+    public ArrayList<User> getAllUsers(){
+       
+        UserDAO uDao = new UserDAO();
+        ArrayList<User> userList = uDao.getAllUsers();
+        return userList;
+        
+    }
 }

@@ -11,6 +11,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Vector;
 
 /**
@@ -56,7 +58,7 @@ public class UserDAO {
 
     }
 
-    public Vector<User> getAllUsers() {
+    public ArrayList<User> getAllUsers() {
 
         DBManager dm = new DBManager();
         Connection con = dm.getConnection();
@@ -69,7 +71,7 @@ public class UserDAO {
         String userType = null;
         User tempUser = new User();
         
-        Vector<User> userData = new Vector();
+        ArrayList<User> userData = new ArrayList();
 
         String query = "SELECT * FROM USERDATA";
         try {
@@ -100,8 +102,35 @@ public class UserDAO {
 
     }
 
-   
+       public void insertUser(User newUser){
+        
+        DBManager dmbgr = new DBManager();
+        Connection con = dmbgr.getConnection();
+        Statement stmt = null;
+        
+        try {
+        
+            stmt = con.createStatement();
+            String sql = String.format("INSERT INTO USERDATA(EMAIL,PASSWORD,FIRSTNAME,LASTNAME,USERTYPE) " + 
+                            "VALUES('%s','%s','%s','%s','%s')",newUser.getEmail(),newUser.getPassword(),newUser.getFirstName(),newUser.getLastName(),newUser.getUserType());
+            stmt.executeUpdate(sql);
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+         }finally {
+            try {
+                stmt.close();
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        
 
-}
+        }
+        
+       }
+       
+    }
+
 
 
