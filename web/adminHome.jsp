@@ -30,11 +30,11 @@
     
     <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-          <a class="navbar-brand" href="index.html">
-              <img src="resources/images/newLogo.png" alt="logo" style="display:inline-block;" height="60" width="90">
-              <span style="display: inline-block;">Toys4Us</span>
-          </a>
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="resources/images/newLogo.png" alt="logo" style="display:inline-block;" height="60" width="90">
+                <span style="display: inline-block;">Toys4Us</span>
+            </a>
           
           
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,6 +48,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="shop.jsp">Shop</a>
+            </li>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="aboutUs.jsp">About Us</a>
@@ -70,7 +71,6 @@
         </div>
       </div>
     </nav>
-    
     <br/>
     <br/>
     <br/>

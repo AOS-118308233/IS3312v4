@@ -45,10 +45,10 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
               <a class="nav-link" href="index.html">Home</a>
-              <span class="sr-only">(current)</span>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="shop.jsp">Shop</a>
+            </li>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="aboutUs.jsp">About Us</a>
@@ -56,9 +56,14 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.jsp">Contact</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.jsp">Log In  <i class="fas fa-user-plus"></i></a>
-            </li>
+            <li class="nav-item active">
+                <c:if test="${empty SKUSER.firstName}">
+                    <a class="nav-link" href="login.jsp">Login <i class="fas fa-user-plus"></i></a>
+                </c:if>
+                <c:if test="${not empty SKUSER.firstName}">
+                    <a class="nav-link" href="login.jsp">Hi ${SKUSER.firstName}!</a>
+                </c:if>
+            </li>           
             <li class="nav-item">
               <a class="nav-link" href="cart.jsp">View Basket  <i class="fas fa-shopping-basket"></i></a>
             </li>
@@ -66,7 +71,6 @@
         </div>
       </div>
     </nav>
-    
     <br/>
     <br/>
     <br/>

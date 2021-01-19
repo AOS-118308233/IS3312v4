@@ -32,33 +32,33 @@ public class userAdminServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
         String action = request.getParameter("action");
         UserManager uServ = new UserManager();
-        
         String url = null;
-        
         if (action == null)
-            request.getRequestDispatcher("/adminHome.jsp").forward(request, response);
-        
-        if ("listUsers".equals(action)){
+            request.getRequestDispatcher("/Home").forward(request, response);
+        if (action.equals("listUsers")){
             ArrayList<User> users = uServ.getAllUsers();
             request.setAttribute("users", users);
             request.getRequestDispatcher("/userAdmin.jsp").forward(request, response);
         }
-        
-        if ("add".equals(action)){
+        if (action.equals("add")){
             request.getRequestDispatcher("/addUser.jsp").forward(request, response);
         }
-        
-        if ("insertUser".equals(action)){
+        if (action.equals("delete")){
+            deleteUser(request,response);
+            ArrayList<User> users = uServ.getAllUsers();
+            request.setAttribute("users", users);
+            request.getRequestDispatcher("/userAdmin.jsp").forward(request, response);
+        }
+        if (action.equals("insertUser")){
             insertUser(request,response);
             ArrayList<User> users = uServ.getAllUsers();
             request.setAttribute("users", users);
             request.getRequestDispatcher("/userAdmin.jsp").forward(request, response);
         }
         else
-            request.getRequestDispatcher("/adminHome").forward(request, response);
+            request.getRequestDispatcher("/Home").forward(request, response);
        
     }
 
@@ -93,11 +93,19 @@ public class userAdminServlet extends HttpServlet {
         newUser.setLastName(lastName);
         newUser.setUserType(userType);
         
-        UserManager uMan = new UserManager();
-        uMan.insertUser(newUser);
+        UserManager uServ = new UserManager();
+        uServ.insertUser(newUser);
         
         
         
+    }
+    
+    private void deleteUser(HttpServletRequest request, HttpServletResponse response){
+        
+        long userId = Long.parseLong(request.getParameter("id"));
+        UserManager uServ = new UserManager();
+        uServ.deleteUser(userId);
+    
     }
 
     /**

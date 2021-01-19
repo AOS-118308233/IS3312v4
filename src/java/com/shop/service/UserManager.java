@@ -39,7 +39,17 @@ public class UserManager {
         
     }
 
-    public void insertUser(User newUser) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void insertUser(User nUser){
+        UserDAO uDao = new UserDAO();
+        uDao.insertUser(nUser);
+        return;
+        
+    }
+    
+    public void deleteUser(long userId){
+        UserDAO uDao = new UserDAO();
+        uDao.deleteUser(userId);
+        return;
+        
     }
 }
