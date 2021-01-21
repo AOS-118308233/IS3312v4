@@ -21,13 +21,12 @@ public class Product implements Serializable{
     String productName;
     String productDescription;
     String brandName;
-    float price;
-    float weight;
+    String price;
     String colour;
     String animalType;
     String productImage;
     
-    public Product(String productCode, String productName, String productDescription, String brandName, float weight, String colour, String animalType, String productImage) {
+    public Product(String productCode, String productName, String productDescription, String brandName, String price, String colour, String animalType, String productImage) {
         
     }
 
@@ -95,30 +94,18 @@ public class Product implements Serializable{
     /**
      * @return the price
      */
-    public float getPrice() {
+    public String getPrice() {
         return price;
     }
 
     /**
      * @param price the price to set
      */
-    public void setPrice(float price) {
+    public void setPrice(String price) {
         this.price = price;
     }
     
-    /**
-     * @return the weight
-     */
-    public float getWeight() {
-        return weight;
-    }
-
-    /**
-     * @param weight the weight to set
-     */
-    public void setWeight(float weight) {
-        this.weight = weight;
-    }
+    
 
     /**
      * @return the colour

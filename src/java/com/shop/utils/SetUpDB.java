@@ -87,7 +87,7 @@ public class SetUpDB {
                 String productName = results.getString(2);
                 String productDescription = results.getString(3);
                 String brandName = results.getString(4);
-                float price = results.getFloat(5);
+                String price = results.getString(5);
                 String colour = results.getString(6);
                 String animalType = results.getString(7);
                 String productImage = results.getString(8);

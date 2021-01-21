@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class DbInitServlet extends HttpServlet {
 
-    /**
+   /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
@@ -39,6 +39,7 @@ public class DbInitServlet extends HttpServlet {
         sdb.createTables();
         sdb.insertSetupData(); //To change body of generated methods, choose Tools | Templates.
         sdb.showData();
+        System.out.println("Debug");
     }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

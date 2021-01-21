@@ -12,6 +12,10 @@
         <servlet-name>userAdminServlet</servlet-name>
         <servlet-class>com.shop.servlets.userAdminServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DbInitServlet</servlet-name>
+        <servlet-class>com.shop.utils.DbInitServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>userAdminServlet</servlet-name>
         <url-pattern>/userAdminServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DbInitServlet</servlet-name>
+        <url-pattern>/DbInitServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

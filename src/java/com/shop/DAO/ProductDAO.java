@@ -30,7 +30,7 @@ public class ProductDAO {
         String productName;
         String productDescription;
         String brandName;
-        float price;
+        String price;
         String colour;
         String animalType;
         String productImage;
@@ -49,7 +49,7 @@ public class ProductDAO {
                 productName = (rs.getString(2));
                 productDescription = (rs.getString(3));
                 brandName = (rs.getString(4));
-                price = (rs.getFloat(5));
+                price = (rs.getString(5));
                 colour = (rs.getString(6));
                 animalType = (rs.getString(7));
                 productImage = (rs.getString(8));

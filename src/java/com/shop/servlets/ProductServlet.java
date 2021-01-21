@@ -37,8 +37,9 @@ public class ProductServlet extends HttpServlet {
         ArrayList<Product> topProducts = pMan.getHomePageProducts();
         
         request.setAttribute("products", topProducts);
-        request.getRequestDispatcher("/shop.jsp").forward(request, response);
+        request.getRequestDispatcher("shop.jsp").forward(request, response);
         
+        System.out.println("Debugging");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

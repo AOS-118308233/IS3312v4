@@ -25,7 +25,7 @@ public class UserDAO {
 
         DBManager dmbgr = new DBManager();
         Connection con = dmbgr.getConnection();
-        int userID = 0;
+        long userID = 0;
         String password = null;
         String firstName = null;
         String lastName = null;
@@ -37,7 +37,7 @@ public class UserDAO {
             PreparedStatement stmt = con.prepareStatement(query);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                userID = (rs.getInt(1));
+                userID = (rs.getLong(1));
                 password = (rs.getString(3));
                 firstName = (rs.getString(4));
                 lastName = (rs.getString(5));
@@ -155,6 +155,31 @@ public class UserDAO {
         }
         
        }
+       
+       public void updateUser(User newUser){
+        
+        DBManager dmbgr = new DBManager();
+        Connection con = dmbgr.getConnection();
+        Statement stmt = null;
+        
+        try {
+        
+            stmt = con.createStatement();
+            String sql = String.format("UPDATE USERDATA SET email='%s',password='%s',firsttName='%s',lastName='%s',userType='%s' where user_id=%d ",newUser.getEmail(),newUser.getPassword(),newUser.getFirstName(),newUser.getLastName(),newUser.getUserType(),newUser.getId());
+            stmt.executeUpdate(sql);
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+         }finally {
+            try {
+                stmt.close();
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        
+    }
        
 }
 

@@ -42,15 +42,26 @@ public class userAdminServlet extends HttpServlet {
             request.setAttribute("users", users);
             request.getRequestDispatcher("/userAdmin.jsp").forward(request, response);
         }
+        
+        System.out.println("Debugging");
+        
         if (action.equals("add")){
             request.getRequestDispatcher("/addUser.jsp").forward(request, response);
         }
+        
+        System.out.println("Debugging");
+        
+        
         if (action.equals("delete")){
             deleteUser(request,response);
             ArrayList<User> users = uServ.getAllUsers();
             request.setAttribute("users", users);
             request.getRequestDispatcher("/userAdmin.jsp").forward(request, response);
         }
+        
+        System.out.println("Debugging");
+        
+        
         if (action.equals("insertUser")){
             insertUser(request,response);
             ArrayList<User> users = uServ.getAllUsers();
@@ -62,6 +73,7 @@ public class userAdminServlet extends HttpServlet {
        
     }
 
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

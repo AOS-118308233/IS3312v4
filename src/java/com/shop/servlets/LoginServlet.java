@@ -10,7 +10,6 @@ import com.shop.service.UserManager;
 import com.shop.utils.IConstants;
 import com.shop.utils.StringUtils;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

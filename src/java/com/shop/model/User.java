@@ -10,14 +10,14 @@ package com.shop.model;
  * @author aoife
  */
 public class User {
-    int id;
-    String email;
-    String password;
-    String firstName;
-    String lastName;
-    String userType;
+    private long id;
+    private String email;
+    private String password;
+    private String firstName;
+    private String lastName;
+    private String userType;
     
-     public User(int id, String email, String password, String firstName, String lastName, String userType) {
+     public User(long id, String email, String password, String firstName, String lastName, String userType) {
       
      } 
 
@@ -28,14 +28,14 @@ public class User {
     /**
      * @return the id
      */
-    public int getId() {
+    public long getId() {
         return id;
     }
     
       /**
      * @param id the id to set
      */
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -108,6 +108,8 @@ public class User {
     public void setUserType(String userType) {
         this.userType = userType;
     }
+
+    
 
   
 

@@ -51,4 +51,4 @@ INSERT INTO PRODUCTS(PRODUCT_NAME, PRODUCT_DESCRIPTION, BRAND_NAME, PRICE, COLOU
 VALUES('Sid the Sloth', 'This is Sid. Sid is a sloth. Not one for doing much to be honest, sounds like the most of us during lockdown.', 'Generic', 'EUR11.95', 'Brown', 'Sloth', 'sloth.jpg', 'Animal');
 
 INSERT INTO PRODUCTS(PRODUCT_NAME, PRODUCT_DESCRIPTION, BRAND_NAME, PRICE, COLOUR, ANIMAL, IMAGE, CATEGORY)
-VALUES('Winnie the Pooh', 'Winnie the Pooh. Everyone loves Pooh. No matter what age you, you will always love Pooh,', 'Disney', 'EUR18.95', 'Yellow', 'Bear', 'pooh.jpg', 'Brand');
+VALUES('Winnie the Pooh', 'Winnie the Pooh. Everyone loves Pooh. No matter what age you, you will always always love Pooh,', 'Disney', 'EUR18.95', 'Yellow', 'Bear', 'pooh.jpg', 'Brand');
