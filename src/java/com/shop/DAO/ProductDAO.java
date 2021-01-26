@@ -34,6 +34,7 @@ public class ProductDAO {
         String colour;
         String animalType;
         String productImage;
+        String category;
         
         ArrayList<Product> productData = new ArrayList();
 
@@ -53,6 +54,7 @@ public class ProductDAO {
                 colour = (rs.getString(6));
                 animalType = (rs.getString(7));
                 productImage = (rs.getString(8));
+                category = (rs.getString(9));
                 
                 Product product = new Product();
                 product.setProductCode(productCode);
@@ -63,6 +65,7 @@ public class ProductDAO {
                 product.setColour(colour);
                 product.setAnimalType(animalType);
                 product.setProductImage(productImage);
+                product.setCategory(category);
                 productData.add(product);
                 productCount++;
             }
@@ -74,7 +77,7 @@ public class ProductDAO {
       
         return productData;
         
-         
+        
         
     }
     

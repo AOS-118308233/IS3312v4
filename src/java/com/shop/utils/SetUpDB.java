@@ -91,8 +91,9 @@ public class SetUpDB {
                 String colour = results.getString(6);
                 String animalType = results.getString(7);
                 String productImage = results.getString(8);
+                String category = results.getString(9);
                
-                logger.info(productCode + "\t\t" + productName + "\t\t" + productDescription + "\t\t" + brandName + "\t\t" + price + "\t\t" + colour + "\t\t" + animalType + "\t\t" + productImage);
+                logger.info(productCode + "\t\t" + productName + "\t\t" + productDescription + "\t\t" + brandName + "\t\t" + price + "\t\t" + colour + "\t\t" + animalType + "\t\t" + productImage + "\t\t" + category);
             }
             results.close();
             stmt.close();

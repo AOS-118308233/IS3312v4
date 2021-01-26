@@ -5,7 +5,7 @@
  */
 /**
  * Author:  aoife
- * Created: 30 Dec 2020
+ * Created: 21 Jan 2021
  */
 
 INSERT INTO USERDATA(EMAIL, PASSWORD, FIRSTNAME, LASTNAME, USERTYPE)
@@ -42,7 +42,7 @@ INSERT INTO PRODUCTS(PRODUCT_NAME, PRODUCT_DESCRIPTION, BRAND_NAME, PRICE, COLOU
 VALUES('Care Bear', 'Passing on your old tatty Care Bear to your kids is not caring. Buy them a new one cheapskate.', 'Care Bear', 'EUR22.95', 'Purple', 'Bear', 'carebear.jpg', 'Bear');
 
 INSERT INTO PRODUCTS(PRODUCT_NAME, PRODUCT_DESCRIPTION, BRAND_NAME, PRICE, COLOUR, ANIMAL, IMAGE, CATEGORY)
-VALUES('Djungelskog', 'Ladies, here is one for you! The djungelskog has all the great qualities of a man, and the best part? They are always silent', 'Generic', 'EUR26.95', 'Brown', 'Bear', 'djungelskog', 'Bear');
+VALUES('Djungelskog', 'Ladies, here is one for you! The djungelskog has all the great qualities of a man, and the best part? They are always silent', 'Generic', 'EUR26.95', 'Brown', 'Bear', 'djungelskog.jpg', 'Bear');
 
 INSERT INTO PRODUCTS(PRODUCT_NAME, PRODUCT_DESCRIPTION, BRAND_NAME, PRICE, COLOUR, ANIMAL, IMAGE, CATEGORY)
 VALUES('Ferrari F1 Bear', 'Remember when Ferrari used to be really good and won 5 world championships in a row? Feels like a 100 years ago...', 'Ferrari', 'EUR24.95', 'Brown', 'Bear', 'ferrari.jpg', 'Brand');

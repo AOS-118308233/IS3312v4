@@ -5,24 +5,25 @@
         <servlet-class>com.shop.servlets.LoginServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>cartServlet</servlet-name>
-        <servlet-class>com.shop.servlets.ProductServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>userAdminServlet</servlet-name>
         <servlet-class>com.shop.servlets.userAdminServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DbInitServlet</servlet-name>
         <servlet-class>com.shop.utils.DbInitServlet</servlet-class>
+        <load-on-startup> 1 </load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductServlet</servlet-name>
+        <servlet-class>com.shop.servlets.ProductServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>com.shop.servlets.CartServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>cartServlet</servlet-name>
-        <url-pattern>/cartServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>userAdminServlet</servlet-name>
@@ -31,6 +32,14 @@
     <servlet-mapping>
         <servlet-name>DbInitServlet</servlet-name>
         <url-pattern>/DbInitServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductServlet</servlet-name>
+        <url-pattern>/ProductServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/CartServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

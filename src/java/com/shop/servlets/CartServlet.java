@@ -8,6 +8,7 @@ package com.shop.servlets;
 import com.shop.model.Product;
 import com.shop.service.ProductManager;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,9 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author aoife
  */
-public class ProductServlet extends HttpServlet {
+public class CartServlet extends HttpServlet {
 
-    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -32,14 +32,15 @@ public class ProductServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
         
-        ProductManager pMan = new ProductManager();
-        ArrayList<Product> topProducts = pMan.getHomePageProducts();
+        ProductManager pServ = new ProductManager();
+        ArrayList<Product> topProducts = pServ.getHomePageProducts();
         
-        request.setAttribute("Product", topProducts);
-        request.getRequestDispatcher("shop.jsp").forward(request, response);
+        request.setAttribute("products", topProducts);
+        request.getRequestDispatcher("/cart.jsp").forward(request, response);
         
-        System.out.println("Debugging");
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -82,3 +83,4 @@ public class ProductServlet extends HttpServlet {
     }// </editor-fold>
 
 }
+

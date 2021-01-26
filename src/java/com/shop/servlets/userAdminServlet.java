@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author aoife
  */
-public class userAdminServlet extends HttpServlet {
+public class UserAdminServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,7 +36,7 @@ public class userAdminServlet extends HttpServlet {
         UserManager uServ = new UserManager();
         String url = null;
         if (action == null)
-            request.getRequestDispatcher("/Home").forward(request, response);
+            request.getRequestDispatcher("/userAdmin.jsp").forward(request, response);
         if (action.equals("listUsers")){
             ArrayList<User> users = uServ.getAllUsers();
             request.setAttribute("users", users);
@@ -69,7 +69,7 @@ public class userAdminServlet extends HttpServlet {
             request.getRequestDispatcher("/userAdmin.jsp").forward(request, response);
         }
         else
-            request.getRequestDispatcher("/Home").forward(request, response);
+            request.getRequestDispatcher("/adminHome.jsp").forward(request, response);
        
     }
 
@@ -145,3 +145,4 @@ public class userAdminServlet extends HttpServlet {
     }// </editor-fold>
 
 }
+

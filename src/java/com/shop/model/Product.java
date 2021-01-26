@@ -13,10 +13,7 @@ import java.io.Serializable;
  */
 public class Product implements Serializable{
 
-    public static void add(Product p5) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+        
     String productCode;
     String productName;
     String productDescription;
@@ -25,6 +22,7 @@ public class Product implements Serializable{
     String colour;
     String animalType;
     String productImage;
+    String category;
     
     public Product(String productCode, String productName, String productDescription, String brandName, String price, String colour, String animalType, String productImage) {
         
@@ -147,6 +145,20 @@ public class Product implements Serializable{
      */
     public void setProductImage(String productImage) {
         this.productImage = productImage;
+    }
+
+    /**
+     * @return the category
+     */
+    public String getCategory() {
+        return category;
+    }
+
+    /**
+     * @param category the category to set
+     */
+    public void setCategory(String category) {
+        this.category = category;
     }
    
 }
