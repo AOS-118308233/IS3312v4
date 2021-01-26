@@ -129,8 +129,7 @@
                                         <h5>${topProduct.price}</h5>
                                         <p class="card-text">${topProduct.productDescription}</p>
                                         <form action="cart.jsp" method="post">
-                                            <input type = "submit" value="View Product" class="btnViewProd">
-                                            <input type ="submit" value="Add To Cart" class="btnBuy">
+                                            <input type = "submit" value="Add To Cart" class="btnBuy">
                                         </form>
                                     </div>
 
