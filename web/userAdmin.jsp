@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="com.shop.model.User"%>
-<%@ taglib prefix = "p" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
 
 <!DOCTYPE html>
@@ -38,7 +38,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
@@ -51,19 +51,23 @@
                             <a class="nav-link" href="contact.jsp">Contact</a>
                         </li>
                         <li class="nav-item active">
-                        <c:if test="${empty SKUSER.firstName}">
-                            <a class="nav-link" href="login.jsp">Login <i class="fas fa-user-plus"></i></a>
-                        </c:if>
-                        <c:if test="${not empty SKUSER.firstName}">
-                            <a class="nav-link" href="login.jsp">Hi ${SKUSER.firstName}!</a>
-                        </c:if>
-                        </li>           
+                            <c:if test="${empty SKUSER.firstName}">
+                                <a class="nav-link" href="login.jsp">Login <i class="fas fa-user-plus"></i></a>
+                                </c:if>
+                                <c:if test="${not empty SKUSER.firstName}">
+                                <a class="nav-link" href="login.jsp">Hi ${SKUSER.firstName}!</a>
+                            </c:if>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="LoginServlet?action=logout">Log Out</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="cart.jsp">View Basket  <i class="fas fa-shopping-basket"></i></a>
                         </li>
                         <li class='nav-item'>
                             <input type="text" placeholder="Search..">
                         </li>
+
                     </ul>
                 </div>
             </div>
@@ -90,34 +94,34 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <c:forEach items="${User}" var="user">
-                                <c:url value="/userAdmin" var="editUserUrl">
-                                    <c:param name="action" value="edit"/>
-                                    <c:param name="id" value="${user.id}"/>
-                                </c:url>
-                                <c:url value="/userAdmin" var="deleteUserUrl">
-                                    <c:param name="action" value="delete"/>
-                                    <c:param name="id" value="${user.id}"/>
-                                </c:url>
+                                <c:forEach items="${User}" var="user">
+                                    <c:url value="/userAdmin" var="editUserUrl">
+                                        <c:param name="action" value="edit"/>
+                                        <c:param name="id" value="${user.id}"/>
+                                    </c:url>
+                                    <c:url value="/userAdmin" var="deleteUserUrl">
+                                        <c:param name="action" value="delete"/>
+                                        <c:param name="id" value="${user.id}"/>
+                                    </c:url>
+                                    <tr>
+                                        <td scope="row">${user.id}</th>
+                                        <td>${user.firstName}</td>
+                                        <td>${user.lastName}</td>
+                                        <td>${user.email}</td>
+                                        <td><a href="${editUserUrl}"> Edit</a> <a href="${deleteUserUrl}">Delete</a></td>
+                                    </tr>
+                                </c:forEach>
                                 <tr>
-                                    <td scope="row">${user.id}</th>
-                                    <td>${user.firstName}</td>
-                                    <td>${user.lastName}</td>
-                                    <td>${user.email}</td>
-                                    <td><a href="${editUserUrl}"> Edit</a> <a href="${deleteUserUrl}">Delete</a></td>
-                                </tr>
-                            </c:forEach>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            <c:url value="/userAdmin" var="addUserUrl">
-                                <c:param name="action" value="add"/>
-                            </c:url>
-                            <td><a href="${addUserUrl}" > Add </a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <c:url value="/userAdmin" var="addUserUrl">
+                                        <c:param name="action" value="add"/>
+                                    </c:url>
+                                    <td><a href="${addUserUrl}" > Add </a></td>
 
-                            </tr>
+                                </tr>
                             </tbody>
                         </table>      
 
@@ -140,20 +144,20 @@
         <footer class="py-5 bg-dark" id="footer">
             <div class="container">
                 <!-- First Line -->
-                <a class="privacy" style="float:left" href="links.html">Privacy Policy</a>
-                <a class="language" style="float:right" href="links.html">Language | English | French | German |</a>
+                <a class="privacy" style="float:left" href="links.jsp">Privacy Policy</a>
+                <a class="language" style="float:right" href="links.jsp">Language | English | French | German |</a>
                 <br/>
                 <!-- Second Line -->
-                <a class="Cookies" style="float:left" href="links.html">Cookies</a>
-                <a class="currency" style="float:right" href="links.html">Currency| ? | £ | $ |</a>
+                <a class="Cookies" style="float:left" href="links.jsp">Cookies</a>
+                <a class="currency" style="float:right" href="links.jsp">Currency| € | £ | $ |</a>
                 <br>
                 <!-- Third Line --> 
-                <a class="delivery" style="float:left" href="links.html">Delivery and Returns</a>
+                <a class="delivery" style="float:left" href="links.jsp">Delivery and Returns</a>
                 <br/>
                 <center>
-                    <a class="fab fa-facebook-square fa-2x" href='links.html'></a>
-                    <a class="fab fa-instagram-square fa-2x" href='links.html'></a>
-                    <a class="fab fa-twitter-square fa-2x" href='links.html'></a>
+                    <a class="fab fa-facebook-square fa-2x" href='links.jsp'></a>
+                    <a class="fab fa-instagram-square fa-2x" href='links.jsp'></a>
+                    <a class="fab fa-twitter-square fa-2x" href='links.jsp'></a>
                     <br/>
                     <p class="m-0 text-center text-white">Copyright &copy; Toys4Us</p></center>
             </div>

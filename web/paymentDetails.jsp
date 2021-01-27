@@ -3,24 +3,24 @@
 <!DOCTYPE html>
 <html>
     <head>      
-            
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
-            <!-- Bootstrap core CSS -->
-    <link href="resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-            <!-- Custom style sheet -->
-    <link href="custom.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="css/heroic-features.css" rel="stylesheet">
-    
-    <link href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" rel="stylesheet">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <!-- Bootstrap core CSS -->
+        <link href="resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom style sheet -->
+        <link href="custom.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="css/heroic-features.css" rel="stylesheet">
+
+        <link href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" rel="stylesheet">
 
         <title>Log In</title>
-            
+
     <body>
-       
-       <!-- Nav Bar -->
+
+        <!-- Nav Bar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
@@ -35,12 +35,11 @@
 
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="shop.jsp">Shop</a>
-                        </li>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="aboutUs.jsp">About Us</a>
@@ -55,102 +54,83 @@
                                 <c:if test="${not empty SKUSER.firstName}">
                                 <a class="nav-link" href="login.jsp">Hi ${SKUSER.firstName}!</a>
                             </c:if>
-                        </li>           
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="LoginServlet?action=logout">Log Out</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="cart.jsp">View Basket  <i class="fas fa-shopping-basket"></i></a>
                         </li>
                         <li class='nav-item'>
                             <input type="text" placeholder="Search..">
                         </li>
+
                     </ul>
                 </div>
             </div>
         </nav>
-                
-    <br/>
-    <br/>
-    <br/>
-    
-    <h2>Please enter your Payment Details</h2>
-    
-    <!-- Form taken from https://bootsnipp.com/forms after I built the form on the website -->
-    
-    <form class="form-horizontal">
-    <fieldset>
 
-    <div class="paymentDetails">
-<!-- Text input-->
-    <div class="form-group">
-        <label class="col-md-4 control-label" for="cardName">Cardholder's Name</label>  
-    <div class="col-md-4">
-        <input id="cardName" name="cardName" type="text" placeholder="Name" class="form-control input-md" required="">
-    </div>
-    </div>
-
-<!-- Text input-->
-    <div class="form-group">
-        <label class="col-md-4 control-label" for="cardNum">Card Number:</label>  
-    <div class="col-md-4">
-        <input id="cardNum" name="cardNum" type="text" placeholder="Card Number" class="form-control input-md" required="">
-    </div>
-    </div>
-
-<!-- Text input-->
-    <div class="form-group">
-        <label class="col-md-4 control-label" for="expDate">Expiry Date:</label>  
-    <div class="col-md-4">
-        <input id="expDate" name="expDate" type="text" placeholder="mm/yy" class="form-control input-md" required="">
-    </div>
-    </div>
-
-<!-- Text input-->
-    <div class="form-group">
-        <label class="col-md-4 control-label" for="cvv">CVV</label>  
-    <div class="col-md-4">
-        <input id="cvv" name="cvv" type="text" placeholder="CVV" class="form-control input-md" required="">
-    </div>
-    </div>
-
-<!-- Button -->
-    <div class="form-group">
-        <label class="col-md-4 control-label" for="submitOrder"></label>
-    <div class="col-md-4">
-        <button id="submitOrder" name="submitOrder" class="btn btn-primary">Submit Order</button>
-    </div>
-    </div>
-
-    </div>
-
-    </fieldset>
-    
-    <!-- Footer -->
-    <footer class="py-5 bg-dark" id="footer">
-      <div class="container">
-          <!-- First Line -->
-        <a class="privacy" style="float:left" href="links.html">Privacy Policy</a>
-        <a class="language" style="float:right" href="links.html">Language | English | French | German |</a>
         <br/>
-        <!-- Second Line -->
-        <a class="Cookies" style="float:left" href="links.html">Cookies</a>
-        <a class="currency" style="float:right" href="links.html">Currency| ? | £ | $ |</a>
-        <br>
-        <!-- Third Line --> 
-        <a class="delivery" style="float:left" href="links.html">Delivery and Returns</a>
         <br/>
-        <center>
-        <a class="fab fa-facebook-square fa-2x" href='links.html'></a>
-        <a class="fab fa-instagram-square fa-2x" href='links.html'></a>
-        <a class="fab fa-twitter-square fa-2x" href='links.html'></a>
         <br/>
-        <p class="m-0 text-center text-white">Copyright &copy; Toys4Us</p></center>
-      </div>
-      <!-- /.container -->
-    </footer>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper/popper.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    
+        <h2>Please enter your Payment Details</h2>
+
+        <!-- Form taken from https://bootsnipp.com/forms after I built the form on the website -->
+
+        <form class="form-horizontal">
+            <fieldset>
+
+                <div class="paymentDetails">
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="cardName">Cardholder's Name</label>  
+                        <div class="col-md-4">
+                            <input id="cardName" name="cardName" type="text" placeholder="Name" class="form-control input-md" required="">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="cardNum">Card Number:</label>  
+                        <div class="col-md-4">
+                            <input id="cardNum" name="cardNum" type="text" placeholder="Card Number" class="form-control input-md" required="">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="expDate">Expiry Date:</label>  
+                        <div class="col-md-4">
+                            <input id="expDate" name="expDate" type="text" placeholder="mm/yy" class="form-control input-md" required="">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="cvv">CVV</label>  
+                        <div class="col-md-4">
+                            <input id="cvv" name="cvv" type="text" placeholder="CVV" class="form-control input-md" required="">
+                        </div>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="submitOrder"></label>
+                        <div class="col-md-4">
+                            <a class="btn btn-primary" href="orderConfirmation.jsp" id="submitOrder" name="submitOrder" >Submit Order</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </fieldset>
+
+            
+            <!-- Bootstrap core JavaScript -->
+            <script src="vendor/jquery/jquery.min.js"></script>
+            <script src="vendor/popper/popper.min.js"></script>
+            <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
     </body>
 </html>

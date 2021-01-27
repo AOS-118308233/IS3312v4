@@ -23,11 +23,11 @@
 
         <link href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" rel="stylesheet">
 
-        <title>Log In</title>
+        <title>Cart</title>
 
     <body>
 
-        <!-- Nav Bar -->
+        <<!-- Nav Bar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
@@ -42,12 +42,11 @@
 
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="shop.jsp">Shop</a>
-                        </li>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="aboutUs.jsp">About Us</a>
@@ -62,17 +61,22 @@
                                 <c:if test="${not empty SKUSER.firstName}">
                                 <a class="nav-link" href="login.jsp">Hi ${SKUSER.firstName}!</a>
                             </c:if>
-                        </li>           
+                        </li> 
+                        <li class="nav-link">
+                            <a class="nav-link" href="LoginServlet?action=logout">Log Out</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="cart.jsp">View Basket  <i class="fas fa-shopping-basket"></i></a>
                         </li>
                         <li class='nav-item'>
                             <input type="text" placeholder="Search..">
                         </li>
+
                     </ul>
                 </div>
             </div>
         </nav>
+        
         <br/>
         <br/>
         <br/>
@@ -113,12 +117,12 @@
 
         <p><b>To change the quantity</b>, enter the new quantity and click on the Update button.</p>
 
-        <form action="" method="post">
+        <form action="shop.jsp" method="post">
             <input type="hidden" name="action" value="shop">
             <input type="submit" id="continueShopping" value="Continue Shopping">
         </form>
 
-        <form action="" method="post">
+        <form action="contactDetails.jsp" method="post">
             <input type="hidden" name="action" value="checkout">
             <input type="submit" id="checkout" value="Checkout">
         </form>

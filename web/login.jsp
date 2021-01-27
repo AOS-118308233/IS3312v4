@@ -26,7 +26,7 @@
 
     <body>
 
-        <!-- Nav Bar -->
+            <!-- Nav Bar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
@@ -41,12 +41,11 @@
 
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="shop.jsp">Shop</a>
-                        </li>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="aboutUs.jsp">About Us</a>
@@ -61,17 +60,22 @@
                                 <c:if test="${not empty SKUSER.firstName}">
                                 <a class="nav-link" href="login.jsp">Hi ${SKUSER.firstName}!</a>
                             </c:if>
-                        </li>           
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="LoginServlet?action=logout">Log Out</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="cart.jsp">View Basket  <i class="fas fa-shopping-basket"></i></a>
                         </li>
                         <li class='nav-item'>
                             <input type="text" placeholder="Search..">
                         </li>
+
                     </ul>
                 </div>
             </div>
         </nav>
+            
         <br/>
         <br/>
 
@@ -110,23 +114,30 @@
                 
             <!-- Sign Up - Goes to the same page anyway -->
             <div class ="container"> 
-                <div class="container" id="signup">
+                <div class="container" id="SignUpForm">
                     <div style="width: 500px; float:right; height:400px; background:#8AA994; margin:10px">
-                        <form class="form-signin" action="/IS3312v3/LoginServlet" method="post">
-                            <h2> Not a member yet? Create an account </h2>
+                        <form class="form-signup" action="/IS3312v3/LoginServlet" method="post">
+                            <h2> Not a member? Create an account!</h2>
                             <br/>
                             <div class="form-label-group">
-                                <input type="email" id="emailLogIn" name="email" class="form-control" placeholder="Email address" required autofocus>
+                                <input type="text" id="firstName" class="form-control" placeholder="First Name">
                             </div>
                             <br/>
                             <div class="form-label-group">
-                                <input type="password" id="passwordLogIn" name="password" class="form-control" placeholder="Password" required>
+                                <input type="text" id="lastName" class="form-control" placeholder="Surname">
                             </div>
                             <br/>
-                            <a class="forgot-password" href="#">Forgot Password?</a>
+                            <div class="form-label-group">
+                                <input type="email" id="emailSignUp" name="email" class="form-control" placeholder="Email address" required>
+                            </div>
                             <br/>
+                            <div class="form-label-group">
+                                <input type="password" id="passwordSignUp" name="password" class="form-control" placeholder="Password" required>
+                            </div>
                             <br/>
-                            <a href="#" class="button" id="SignIn">Sign Up</a>
+                            
+                            
+                            <a class="btn" href="signUpConfirmation.jsp"  id="SignUp">Sign Up</a>
 
                         </form>
                     </div>

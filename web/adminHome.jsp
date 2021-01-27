@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="com.shop.model.User"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
+
 <html>
     <head>      
 
@@ -17,7 +18,7 @@
 
         <link href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" rel="stylesheet">
 
-        <title>Log In</title>
+        <title>Admin Home</title>
 
     <body>
 
@@ -36,12 +37,11 @@
 
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="shop.jsp">Shop</a>
-                        </li>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="aboutUs.jsp">About Us</a>
@@ -56,17 +56,22 @@
                                 <c:if test="${not empty SKUSER.firstName}">
                                 <a class="nav-link" href="login.jsp">Hi ${SKUSER.firstName}!</a>
                             </c:if>
-                        </li>           
+                        </li> 
+                        <li class="nav-link">
+                            <a class="nav-link" href="LoginServlet?action=logout">Log Out</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="cart.jsp">View Basket  <i class="fas fa-shopping-basket"></i></a>
                         </li>
                         <li class='nav-item'>
                             <input type="text" placeholder="Search..">
                         </li>
+
                     </ul>
                 </div>
             </div>
         </nav>
+        
         <br/>
         <br/>
         <br/>
@@ -122,7 +127,7 @@
         </div>
         <!-- /.row -->
 
-    </div>
+   
     <!-- /.container -->
 
     <!--  <div class="container">
@@ -152,7 +157,7 @@
 </div>
 </center> -->
 
-</div> <!-- END OF MAIN DIV -->
+
 
 
 <script type="text/javascript" src="resources/JS/list.js"></script>

@@ -28,7 +28,6 @@
 
 
     <body>
-
         <!-- Nav Bar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
@@ -44,7 +43,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
@@ -63,13 +62,17 @@
                                 <c:if test="${not empty SKUSER.firstName}">
                                 <a class="nav-link" href="login.jsp">Hi ${SKUSER.firstName}!</a>
                             </c:if>
-                        </li>           
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="LoginServlet?action=logout">Log Out</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="cart.jsp">View Basket  <i class="fas fa-shopping-basket"></i></a>
                         </li>
                         <li class='nav-item'>
                             <input type="text" placeholder="Search..">
                         </li>
+
                     </ul>
                 </div>
             </div>
@@ -95,41 +98,41 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                
-                            <c:forEach items="${Product}" var="product">
-                                <c:url value="/productAdmin" var="editProductUrl">
-                                    <c:param name="action" value="edit"/>
-                                    <c:param name="productCode" value="${product.productCode}"/>
-                                </c:url>
-                                <c:url value="/productAdmin" var="deleteProductUrl">
-                                    <c:param name="action" value="delete"/>
-                                    <c:param name="productCode" value="${product.productCode}"/>
-                                </c:url>
-                                <tr>
-                                    <td scope="row">${product.productCode}</td>
-                                    <td>${product.productName}</td>
-                                    <td>${product.productDescription}</td>
-                                    <td>${product.brandName}</td>
-                                    <td>${product.price}</td>
-                                    <td>${product.colour}</td>
-                                    <td>${product.animalType}</td>
-                                    <td>${product.productImage}</td>
-                                    <td>${category}</td>
-                                    
-                                    <td><a href="${editProductUrl}"> Edit</a> <a href="${deleteProductUrl}">Delete</a></td>
-                                </tr>
-                            </c:forEach>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            <c:url value="/productAdmin" var="addProductUrl">
-                                <c:param name="action" value="add"/>
-                            </c:url>
-                            <td><a href="${addProductUrl}" > Add </a></td>
 
-                            </tr>
+                                <c:forEach items="${Product}" var="product">
+                                    <c:url value="/productAdmin" var="editProductUrl">
+                                        <c:param name="action" value="edit"/>
+                                        <c:param name="productCode" value="${product.productCode}"/>
+                                    </c:url>
+                                    <c:url value="/productAdmin" var="deleteProductUrl">
+                                        <c:param name="action" value="delete"/>
+                                        <c:param name="productCode" value="${product.productCode}"/>
+                                    </c:url>
+                                    <tr>
+                                        <td scope="row">${product.productCode}</td>
+                                        <td>${product.productName}</td>
+                                        <td>${product.productDescription}</td>
+                                        <td>${product.brandName}</td>
+                                        <td>${product.price}</td>
+                                        <td>${product.colour}</td>
+                                        <td>${product.animalType}</td>
+                                        <td>${product.productImage}</td>
+                                        <td>${category}</td>
+
+                                        <td><a href="${editProductUrl}"> Edit</a> <a href="${deleteProductUrl}">Delete</a></td>
+                                    </tr>
+                                </c:forEach>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <c:url value="/productAdmin" var="addProductUrl">
+                                        <c:param name="action" value="add"/>
+                                    </c:url>
+                                    <td><a href="${addProductUrl}" > Add </a></td>
+
+                                </tr>
                             </tbody>
                         </table>      
 
@@ -148,20 +151,20 @@
         <footer class="py-5 bg-dark" id="footer">
             <div class="container">
                 <!-- First Line -->
-                <a class="privacy" style="float:left" href="links.html">Privacy Policy</a>
-                <a class="language" style="float:right" href="links.html">Language | English | French | German |</a>
+                <a class="privacy" style="float:left" href="links.jsp">Privacy Policy</a>
+                <a class="language" style="float:right" href="links.jsp">Language | English | French | German |</a>
                 <br/>
                 <!-- Second Line -->
-                <a class="Cookies" style="float:left" href="links.html">Cookies</a>
-                <a class="currency" style="float:right" href="links.html">Currency| ? | £ | $ |</a>
+                <a class="Cookies" style="float:left" href="links.jsp">Cookies</a>
+                <a class="currency" style="float:right" href="links.jsp">Currency| € | £ | $ |</a>
                 <br>
                 <!-- Third Line --> 
-                <a class="delivery" style="float:left" href="links.html">Delivery and Returns</a>
+                <a class="delivery" style="float:left" href="links.jsp">Delivery and Returns</a>
                 <br/>
                 <center>
-                    <a class="fab fa-facebook-square fa-2x" href='links.html'></a>
-                    <a class="fab fa-instagram-square fa-2x" href='links.html'></a>
-                    <a class="fab fa-twitter-square fa-2x" href='links.html'></a>
+                    <a class="fab fa-facebook-square fa-2x" href='links.jsp'></a>
+                    <a class="fab fa-instagram-square fa-2x" href='links.jsp'></a>
+                    <a class="fab fa-twitter-square fa-2x" href='links.jsp'></a>
                     <br/>
                     <p class="m-0 text-center text-white">Copyright &copy; Toys4Us</p></center>
             </div>

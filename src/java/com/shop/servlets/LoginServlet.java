@@ -37,6 +37,13 @@ public class LoginServlet extends HttpServlet implements IConstants {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
+        String logout = request.getParameter("action");
+            if(logout!= null) {
+                request.getSession(true).removeAttribute("SKUSER");
+                RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+                rd.forward(request,response);
+            }
+        
         if (StringUtils.isStringEmpty(email) || StringUtils.isStringEmpty(password)) {
 
             RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");

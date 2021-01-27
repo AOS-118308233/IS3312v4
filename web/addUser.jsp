@@ -19,7 +19,7 @@
 
         <link href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" rel="stylesheet">
 
-        <title>Log In</title>
+        <title>Add Us</title>
 
     <body>
 
@@ -38,13 +38,12 @@
 
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="shop.jsp">Shop</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="aboutUs.jsp">About Us</a>
                         </li>
@@ -58,17 +57,22 @@
                                 <c:if test="${not empty SKUSER.firstName}">
                                 <a class="nav-link" href="login.jsp">Hi ${SKUSER.firstName}!</a>
                             </c:if>
-                        </li>           
+                        </li> 
+                        <li class="nav-link">
+                            <a class="nav-link" href="LoginServlet?action=logout">Log Out</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="cart.jsp">View Basket  <i class="fas fa-shopping-basket"></i></a>
                         </li>
                         <li class='nav-item'>
                             <input type="text" placeholder="Search..">
                         </li>
+
                     </ul>
                 </div>
             </div>
         </nav>
+        
         <br/>
         <br/>
         <br/>
@@ -134,29 +138,7 @@
         </div>
 
 
-        <!-- Footer -->
-        <footer class="py-5 bg-dark" id="footer">
-            <div class="container">
-                <!-- First Line -->
-                <a class="privacy" style="float:left" href="links.html">Privacy Policy</a>
-                <a class="language" style="float:right" href="links.html">Language | English | French | German |</a>
-                <br/>
-                <!-- Second Line -->
-                <a class="Cookies" style="float:left" href="links.html">Cookies</a>
-                <a class="currency" style="float:right" href="links.html">Currency| ? | £ | $ |</a>
-                <br>
-                <!-- Third Line --> 
-                <a class="delivery" style="float:left" href="links.html">Delivery and Returns</a>
-                <br/>
-                <center>
-                    <a class="fab fa-facebook-square fa-2x" href='links.html'></a>
-                    <a class="fab fa-instagram-square fa-2x" href='links.html'></a>
-                    <a class="fab fa-twitter-square fa-2x" href='links.html'></a>
-                    <br/>
-                    <p class="m-0 text-center text-white">Copyright &copy; Toys4Us</p></center>
-            </div>
-            <!-- /.container -->
-        </footer>
+        
 
         <!-- Bootstrap core JavaScript -->
         <script src="vendor/jquery/jquery.min.js"></script>

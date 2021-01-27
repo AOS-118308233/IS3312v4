@@ -19,7 +19,7 @@
 
             <link href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" rel="stylesheet">
 
-            <title>Log In</title>
+            <title>Add Product</title>
 
         <body>
 
@@ -38,7 +38,7 @@
 
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active">
+                            <li class="nav-item">
                                 <a class="nav-link" href="index.html">Home</a>
                             </li>
                             <li class="nav-item">
@@ -57,17 +57,22 @@
                                     <c:if test="${not empty SKUSER.firstName}">
                                     <a class="nav-link" href="login.jsp">Hi ${SKUSER.firstName}!</a>
                                 </c:if>
-                            </li>           
+                            </li> 
+                            <li class="nav-link">
+                                <a class="nav-link" href="LoginServlet?action=logout">Log Out</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="cart.jsp">View Basket  <i class="fas fa-shopping-basket"></i></a>
                             </li>
                             <li class='nav-item'>
                                 <input type="text" placeholder="Search..">
                             </li>
+
                         </ul>
                     </div>
                 </div>
             </nav>
+
             <br/>
             <br/>
             <br/>
@@ -90,71 +95,71 @@
                             </c:url>
 
                             <form action="${insertProductUrl}" method="POST">
-                                
+
                                 <div class="form-group row">
                                     <label for="prodCode" class="col-4 col-form-label">Product Code: </label> 
                                     <div class="col-8">
                                         <input id="prodCode" name="prodCode" type="text" class="form-control" required="required">
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group row">
                                     <label for="prodName" class="col-4 col-form-label">Product Name: </label> 
                                     <div class="col-8">
                                         <input id="prodName" name="prodName" type="text" class="form-control" required="required">
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group row">
                                     <label for="prodDescr" class="col-4 col-form-label">Product Description: </label> 
                                     <div class="col-8">
                                         <input id="prodDescr" name="prodDescr" type="text" class="form-control" required="required">
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group row">
                                     <label for="brandName" class="col-4 col-form-label">Brand Name: </label> 
                                     <div class="col-8">
                                         <input id="brandName" name="brandName" type="text" class="form-control" required="required">
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group row">
                                     <label for="price" class="col-4 col-form-label">Price: </label> 
                                     <div class="col-8">
                                         <input id="price" name="price" type="text" class="form-control" required="required">
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group row">
                                     <label for="colour" class="col-4 col-form-label">Colour: </label> 
                                     <div class="col-8">
                                         <input id="colour" name="colour" type="text" class="form-control" required="required">
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group row">
                                     <label for="animalType" class="col-4 col-form-label">Animal Type: </label> 
                                     <div class="col-8">
                                         <input id="animalType" name="animalType" type="text" class="form-control" required="required">
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group row">
                                     <label for="prodImage" class="col-4 col-form-label">Product Image: </label> 
                                     <div class="col-8">
                                         <input id="prodImage" name="prodImage" type="text" class="form-control" required="required">
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group row">
                                     <label for="category" class="col-4 col-form-label">Category</label> 
                                     <div class="col-8">
                                         <input id="category" name="category" type="text" class="form-control" required="required">
                                     </div>
                                 </div>
-                                
-                                                                
+
+
                                 <div class="form-group row">
                                     <label class="col-4">User Type</label> 
                                     <div class="col-8">
@@ -181,29 +186,6 @@
 
 
 
-            <!-- Footer -->
-            <footer class="py-5 bg-dark" id="footer">
-                <div class="container">
-                    <!-- First Line -->
-                    <a class="privacy" style="float:left" href="links.html">Privacy Policy</a>
-                    <a class="language" style="float:right" href="links.html">Language | English | French | German |</a>
-                    <br/>
-                    <!-- Second Line -->
-                    <a class="Cookies" style="float:left" href="links.html">Cookies</a>
-                    <a class="currency" style="float:right" href="links.html">Currency| ? | £ | $ |</a>
-                    <br>
-                    <!-- Third Line --> 
-                    <a class="delivery" style="float:left" href="links.html">Delivery and Returns</a>
-                    <br/>
-                    <center>
-                        <a class="fab fa-facebook-square fa-2x" href='links.html'></a>
-                        <a class="fab fa-instagram-square fa-2x" href='links.html'></a>
-                        <a class="fab fa-twitter-square fa-2x" href='links.html'></a>
-                        <br/>
-                        <p class="m-0 text-center text-white">Copyright &copy; Toys4Us</p></center>
-                </div>
-                <!-- /.container -->
-            </footer>
 
             <!-- Bootstrap core JavaScript -->
             <script src="vendor/jquery/jquery.min.js"></script>
