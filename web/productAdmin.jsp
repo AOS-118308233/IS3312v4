@@ -1,9 +1,8 @@
 <%-- 
-    Document   : shop
-    Created on : 19 Nov 2020, 16:03:37
+    Document   : productAdmin
+    Created on : 27 Jan 2021, 17:06:16
     Author     : aoife
 --%>
-
 
 <!DOCTYPE html>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -76,58 +75,74 @@
             </div>
         </nav>
 
-
-        <h2> OUR BEST-SELLING PRODUCTS!!! </h2>
-
-        <div class="container">
-
-
-            <br/>
-            <br/>
-
-            <!-- Filter searches - adapted from https://www.w3schools.com/howto/howto_js_filter_lists.asp -->
-            <div class="container" id="Filters">
-                <h2>Filter By:</h2>
-                <ul id="myUL">
-                    <li><a href="#">Teddy Bears</a></li>
-                    <li><a href="#">Animals</a></li>
-                    <li><a href="#">Branded Toys</a></li>
-                </ul>
-            </div>
-            <br/>
-
-
-
-
+        <div class="container bg-light">
             <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="my-4">Product Administration</h1>
+                    <div class="row">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Product Code</th>
+                                    <th scope="col">Product Name</th>
+                                    <th scope="col">Product Description</th>
+                                    <th scope="col">Brand</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Colour</th>
+                                    <th scope="col">Animal Type</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Category</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            <c:forEach items="${Product}" var="product">
+                                <c:url value="/productAdmin" var="editProductUrl">
+                                    <c:param name="action" value="edit"/>
+                                    <c:param name="productCode" value="${product.productCode}"/>
+                                </c:url>
+                                <c:url value="/productAdmin" var="deleteProductUrl">
+                                    <c:param name="action" value="delete"/>
+                                    <c:param name="productCode" value="${product.productCode}"/>
+                                </c:url>
+                                <tr>
+                                    <td scope="row">${product.productCode}</td>
+                                    <td>${product.productName}</td>
+                                    <td>${product.productDescription}</td>
+                                    <td>${product.brandName}</td>
+                                    <td>${product.price}</td>
+                                    <td>${product.colour}</td>
+                                    <td>${product.animalType}</td>
+                                    <td>${product.productImage}</td>
+                                    <td>${category}</td>
+                                    
+                                    <td><a href="${editProductUrl}"> Edit</a> <a href="${deleteProductUrl}">Delete</a></td>
+                                </tr>
+                            </c:forEach>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            <c:url value="/productAdmin" var="addProductUrl">
+                                <c:param name="action" value="add"/>
+                            </c:url>
+                            <td><a href="${addProductUrl}" > Add </a></td>
 
-                <c:forEach items="${Product}" var="topProduct">
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="resources/images/${topProduct.productImage}" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title"><a href="viewProduct.jsp">${topProduct.productName}</a></h4>
-                                <h5>${topProduct.price}</h5>
-                                <p class="card-text">${topProduct.productDescription}</p>
-                                <form action="cart.jsp" method="post">
-                                    <input type = "submit" value="Add To Cart" class="btnBuy">
-                                </form>
-                            </div>
+                            </tr>
+                            </tbody>
+                        </table>      
 
-                        </div>
                     </div>
-                </c:forEach>
+                    <!-- /.row -->
 
+                </div>
+                <!-- /.col-lg-9 -->
 
             </div>
             <!-- /.row -->
 
-
-
         </div>
-        <!-- /.row -->
-
-
 
         <!-- Footer -->
         <footer class="py-5 bg-dark" id="footer">

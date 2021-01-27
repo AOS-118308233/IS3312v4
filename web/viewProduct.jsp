@@ -76,7 +76,22 @@
             <br/>
 
 
-            <h1> Hello World </h1>
+             <c:forEach items="${Product}" var="topProduct">
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <a href="#"><img class="card-img-top" src="resources/images/${topProduct.productImage}" alt=""></a>
+                                    <div class="card-body">
+                                        <h4 class="card-title"><a href="viewProduct.jsp">${topProduct.productName}</a></h4>
+                                        <h5>${topProduct.price}</h5>
+                                        <p class="card-text">${topProduct.productDescription}</p>
+                                        <form action="cart.jsp" method="post">
+                                            <input type = "submit" value="Add To Cart" class="btnBuy">
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </c:forEach>
 
             <!-- Footer -->
             <footer class="py-5 bg-dark" id="footer">

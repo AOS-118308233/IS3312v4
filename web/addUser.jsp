@@ -44,7 +44,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="shop.jsp">Shop</a>
                         </li>
-                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="aboutUs.jsp">About Us</a>
                         </li>

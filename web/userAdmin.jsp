@@ -44,7 +44,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="shop.jsp">Shop</a>
                         </li>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="aboutUs.jsp">About Us</a>
                         </li>
@@ -91,7 +90,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <c:forEach items="${users}" var="user">
+                            <c:forEach items="${User}" var="user">
                                 <c:url value="/userAdmin" var="editUserUrl">
                                     <c:param name="action" value="edit"/>
                                     <c:param name="id" value="${user.id}"/>
