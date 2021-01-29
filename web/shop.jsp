@@ -109,7 +109,7 @@
                         <div class="card h-100">
                             <a href="#"><img class="card-img-top" src="resources/images/${topProduct.productImage}" alt=""></a>
                             <div class="card-body">
-                                <h4 class="card-title"><a href="viewProduct.jsp">${topProduct.productName}</a></h4>
+                                <h4 class="card-title"><a href="/SingleProductServlet">${topProduct.productName}</a></h4>
                                 <h5>${topProduct.price}</h5>
                                 <p class="card-text">${topProduct.productDescription}</p>
                                 <form action="cart.jsp" method="post">

@@ -28,6 +28,17 @@ public class ProductManager {
          
          
      }
+     
+     public class searchProducts {
+        //search box is a from and submit it to the SearchServlet
+        //Servlet calls searchProducts
+        //findProducts method in DAO is called
+        //results to be placed on the request
+        //table displays the results
+        //clicking on a product brings you to the viewProduct.jsp
+         
+         
+     }
     
      
 }
