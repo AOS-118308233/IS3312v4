@@ -104,7 +104,7 @@
                                         <c:param name="id" value="${user.id}"/>
                                     </c:url>
                                     <tr>
-                                        <td scope="row">${user.id}</th>
+                                        <td scope="row">${user.id}</td>
                                         <td>${user.firstName}</td>
                                         <td>${user.lastName}</td>
                                         <td>${user.email}</td>

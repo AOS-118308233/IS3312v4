@@ -23,7 +23,7 @@ public class ProductDAO {
     /* we are gonna fake this one */
     public ArrayList<Product> getTopProducts(int numProducts){
         
-       DBManager dm = new DBManager();
+        DBManager dm = new DBManager();
         Connection con = dm.getConnection();
         
         String productCode;
@@ -76,6 +76,12 @@ public class ProductDAO {
 
       
         return productData;
+        
+        
+        
+    }
+    
+    public class getCategoryList {
         
         
         

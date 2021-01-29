@@ -22,6 +22,12 @@ public class ProductManager {
         return pDao.getTopProducts(9);
         
     }
+     
+     public class getCategoryList {
+         
+         
+         
+     }
     
      
 }
