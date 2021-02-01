@@ -100,11 +100,11 @@
                             <tbody>
 
                                 <c:forEach items="${Product}" var="product">
-                                    <c:url value="/productAdmin" var="editProductUrl">
+                                    <c:url value="/productAdminServlet" var="editProductUrl">
                                         <c:param name="action" value="edit"/>
                                         <c:param name="productCode" value="${product.productCode}"/>
                                     </c:url>
-                                    <c:url value="/productAdmin" var="deleteProductUrl">
+                                    <c:url value="/productAdminServlet" var="deleteProductUrl">
                                         <c:param name="action" value="delete"/>
                                         <c:param name="productCode" value="${product.productCode}"/>
                                     </c:url>
@@ -127,7 +127,7 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <c:url value="/productAdmin" var="addProductUrl">
+                                    <c:url value="/productAdminServlet" var="addProductUrl">
                                         <c:param name="action" value="add"/>
                                     </c:url>
                                     <td><a href="${addProductUrl}" > Add </a></td>

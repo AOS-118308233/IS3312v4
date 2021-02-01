@@ -11,21 +11,24 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author aoife
  */
 public class ProductDAO {
-    
+
     /* Gets number of top products specified */
-    /* we are gonna fake this one */
-    public ArrayList<Product> getTopProducts(int numProducts){
-        
+ /* we are gonna fake this one */
+    public ArrayList<Product> getTopProducts(int numProducts) {
+
         DBManager dm = new DBManager();
         Connection con = dm.getConnection();
-        
+
         String productCode;
         String productName;
         String productDescription;
@@ -35,7 +38,7 @@ public class ProductDAO {
         String animalType;
         String productImage;
         String category;
-        
+
         ArrayList<Product> productData = new ArrayList();
 
         String query = "SELECT * FROM PRODUCTS";
@@ -44,8 +47,9 @@ public class ProductDAO {
             ResultSet rs = stmt.executeQuery();
             int productCount = 0;
             while (rs.next()) {
-                if (productCount >= numProducts)
+                if (productCount >= numProducts) {
                     break;
+                }
                 productCode = (rs.getString(1));
                 productName = (rs.getString(2));
                 productDescription = (rs.getString(3));
@@ -55,7 +59,7 @@ public class ProductDAO {
                 animalType = (rs.getString(7));
                 productImage = (rs.getString(8));
                 category = (rs.getString(9));
-                
+
                 Product product = new Product();
                 product.setProductCode(productCode);
                 product.setProductName(productName);
@@ -74,19 +78,117 @@ public class ProductDAO {
             e.printStackTrace();
         }
 
-      
         return productData;
-        
-        
-        
+
     }
-    
+
+    public Product getProductCode(String productCode) throws SQLException {
+        DBManager dbmgr = new DBManager();
+        Connection con = dbmgr.getConnection();
+
+        String productName = null;
+        String productDescription = null;
+        String brandName = null;
+        String price = null;
+        String colour = null;
+        String animalType = null;
+        String productImage = null;
+        String category = null;
+
+        String query = String.format("SELECT * FROM PRODUCTS WHERE PRODUCT_CODE=%d", productCode);
+
+        try {
+            PreparedStatement stmt = con.prepareStatement(query);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                productName = (rs.getString(2));
+                productDescription = (rs.getString(3));
+                brandName = (rs.getString(4));
+                price = (rs.getString(5));
+                colour = (rs.getString(6));
+                animalType = (rs.getString(7));
+                productImage = (rs.getString(8));
+                category = (rs.getString(9));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+
+    }
+
+    public ArrayList<Product> getAllProducts() {
+
+        DBManager dm = new DBManager();
+        Connection con = dm.getConnection();
+
+        String productCode = null;
+        String productName = null;
+        String productDescription = null;
+        String brandName = null;
+        String price = null;
+        String colour = null;
+        String animalType = null;
+        String productImage = null;
+        String category = null;
+
+        ArrayList<Product> productData = new ArrayList();
+
+        String query = "SELECT * FROM PRODUCTS";
+        try {
+            PreparedStatement stmt = con.prepareStatement(query);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                productCode = (rs.getString(1));
+                productName = (rs.getString(2));
+                productDescription = (rs.getString(3));
+                brandName = (rs.getString(4));
+                price = (rs.getString(5));
+                colour = (rs.getString(6));
+                animalType = (rs.getString(7));
+                productImage = (rs.getString(8));
+                category = (rs.getString(9));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return productData;
+
+    }
+
+    public void insertProduct(Product newProduct) {
+        DBManager dmbgr = new DBManager();
+        Connection con = dmbgr.getConnection();
+        Statement stmt = null;
+
+        try {
+
+            stmt = con.createStatement();
+            String sql = String.format("VALUES('%S', '%S', '%S', '%S', '%S', '%S', '%S', '%S', '%S')"
+            + "INSERT INTO PRODUCTS(PRODUCT_CODE, PRODUCT_NAME, PRODUCT_DESCRIPTION, BRAND_NAME, PRICE, COLOUR, ANIMAL, IMAGE, CATEGORY) ", newProduct.getProductCode(), newProduct.getProductName(), newProduct.getProductDescription(), newProduct.getBrandName() newProduct.getPrice(), newProduct.getColour(), newProduct.getAnimalType(), newProduct.getProductImage(), newProduct.getCategory() );
+            stmt.executeUpdate(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                stmt.close();
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+
+    }
+
     public class getCategoryList {
-        
-        
-        
+
     }
-    
+
     public class findProducts {
         //search box is a from and submit it to the SearchServlet
         //Servlet calls searchProducts
@@ -95,5 +197,5 @@ public class ProductDAO {
         //table displays the results
         //clicking on a product brings you to the viewProduct.jsp
     }
-    
+
 }

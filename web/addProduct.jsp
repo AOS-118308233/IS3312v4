@@ -90,7 +90,7 @@
 
 
                     <div class="row">
-                        <c:url value="/productAdmin" var="insertProductUrl">
+                        <c:url value="/productAdminServlet" var="insertProductUrl">
                             <c:param name="action" value="insertProduct"/>
                         </c:url>
 

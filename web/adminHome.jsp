@@ -108,8 +108,8 @@
                             <h1 class="pt-4"> Administration Home </h3>   
 
                                 <div class="list-group">
-                                    <a href="#" class="list-group-item">Product Administration</a>
-                                    <a href="userAdmin?action=listUsers" class="list-group-item">User Administration</a>
+                                    <a href="productAdminServlet?action=listProducts" class="list-group-item">Product Administration</a>
+                                    <a href="userAdminServlet?action=listUsers" class="list-group-item">User Administration</a>
                                 </div>
 
                         </div>

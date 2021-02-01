@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author aoife
  */
-public class SearchServlet extends HttpServlet {
+public class productAdminServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,15 +29,6 @@ public class SearchServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        //search box is a from and submit it to the SearchServlet
-        //Servlet calls searchProducts
-        //findProducts method in DAO is called
-        //results to be placed on the request
-        //table displays the results
-        //clicking on a product brings you to the viewProduct.jsp
-        
-      
         
     }
 

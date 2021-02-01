@@ -93,22 +93,23 @@
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
+                                                     
                             <tbody>
                                 <c:forEach items="${User}" var="user">
-                                    <c:url value="/userAdmin" var="editUserUrl">
+                                    <c:url value="/userAdminServlet" var="editUserUrl">
                                         <c:param name="action" value="edit"/>
                                         <c:param name="id" value="${user.id}"/>
                                     </c:url>
-                                    <c:url value="/userAdmin" var="deleteUserUrl">
+                                    <c:url value="/userAdminServlet" var="deleteUserUrl">
                                         <c:param name="action" value="delete"/>
                                         <c:param name="id" value="${user.id}"/>
                                     </c:url>
                                     <tr>
                                         <td scope="row">${user.id}</td>
+                                        <td>${user.email}</td>
                                         <td>${user.firstName}</td>
                                         <td>${user.lastName}</td>
-                                        <td>${user.email}</td>
-                                        <td><a href="${editUserUrl}"> Edit</a> <a href="${deleteUserUrl}">Delete</a></td>
+                                        <td><a href="${editUserUrl}"> Edit</a><a href="${deleteUserUrl}">Delete</a></td>
                                     </tr>
                                 </c:forEach>
                                 <tr>
@@ -116,10 +117,10 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <c:url value="/userAdmin" var="addUserUrl">
+                                    <c:url value="/userAdminServlet" var="addUserUrl">
                                         <c:param name="action" value="add"/>
                                     </c:url>
-                                    <td><a href="${addUserUrl}" > Add </a></td>
+                                    <td><a href="${addUserUrl}"> Add </a></td>
 
                                 </tr>
                             </tbody>

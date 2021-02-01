@@ -72,7 +72,7 @@
                 </div>
             </div>
         </nav>
-        
+
         <br/>
         <br/>
         <br/>
@@ -87,7 +87,7 @@
 
                     <div class="row">
 
-                        <c:url value="/userAdmin" var="insertUserUrl">
+                        <c:url value="/userAdminServlet" var="insertUserUrl">
                             <c:param name="action" value="insertUser"/>
                         </c:url>
 
@@ -127,7 +127,7 @@
                             </div> 
                             <div class="form-group row">
                                 <div class="offset-4 col-8">
-                                    <button name="submit" type="submit" class="btn btn-primary">Add User</button>
+                                    <button name="submit" type="submit" class="btnSubmit">Add User</button>
                                 </div>
                             </div>
                         </form>
@@ -138,7 +138,7 @@
         </div>
 
 
-        
+
 
         <!-- Bootstrap core JavaScript -->
         <script src="vendor/jquery/jquery.min.js"></script>

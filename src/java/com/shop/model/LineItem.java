@@ -35,16 +35,16 @@ public class LineItem {
         return quantity;
     }
 
-    public double getTotal() {
-        double total;
-        total = quantity * product.getPrice();
-        return total;
-    }
+    //public double getTotal() {
+        //double total;
+        //total = product.getPrice() * quantity;
+        //return total;
+    ////}
  
-    public String getTotalCurrencyFormat() {
-        NumberFormat currency = NumberFormat.getCurrencyInstance();
-        return currency.format(this.getTotal());
-    }
+    //public String getTotalCurrencyFormat() {
+    //    NumberFormat currency = NumberFormat.getCurrencyInstance();
+    //    return currency.format(this.getTotal());
+    //}
 }
     
 
