@@ -166,10 +166,9 @@ public class ProductDAO {
         Statement stmt = null;
 
         try {
-
             stmt = con.createStatement();
-            String sql = String.format("VALUES('%S', '%S', '%S', '%S', '%S', '%S', '%S', '%S', '%S')"
-            + "INSERT INTO PRODUCTS(PRODUCT_CODE, PRODUCT_NAME, PRODUCT_DESCRIPTION, BRAND_NAME, PRICE, COLOUR, ANIMAL, IMAGE, CATEGORY) ", newProduct.getProductCode(), newProduct.getProductName(), newProduct.getProductDescription(), newProduct.getBrandName() newProduct.getPrice(), newProduct.getColour(), newProduct.getAnimalType(), newProduct.getProductImage(), newProduct.getCategory() );
+            String sql = String.format("INSERT INTO PRODUCTS(PRODUCT_NAME, PRODUCT_DESCRIPTION, BRAND_NAME, PRICE, COLOUR, ANIMAL, IMAGE, CATEGORY)"
+                    + "VALUES('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')", newProduct.getProductName(), newProduct.getProductDescription(), newProduct.getBrandName(), newProduct.getPrice(), newProduct.getColour(), newProduct.getAnimalType(), newProduct.getProductImage(), newProduct.getCategory());
             stmt.executeUpdate(sql);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -181,6 +180,55 @@ public class ProductDAO {
                 e.printStackTrace();
             }
 
+        }
+
+    }
+
+    public void updateProduct(Product newProduct) {
+
+        DBManager dmbgr = new DBManager();
+        Connection con = dmbgr.getConnection();
+        Statement stmt = null;
+
+        try {
+
+            stmt = con.createStatement();
+            String sql = String.format("UPDATE PRODUCTS SET PRODUCT_NAME='%s', PRODUCT_DESCRIPTION='%s', BRAND_NAME='%s', PRICE='%s', COLOUR='%s', ANIMAL='%s', IMAGE='%s', CATEGORY='%s' where PRODUCT_CODE=%d", 
+                    newProduct.getProductName(), newProduct.getProductDescription(), newProduct.getBrandName(), newProduct.getPrice(), newProduct.getColour(), newProduct.getAnimalType(), newProduct.getProductImage(), newProduct.getCategory());
+            stmt.executeUpdate(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                stmt.close();
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+    public void deleteProduct(String productCode) {
+
+        DBManager dmbgr = new DBManager();
+        Connection con = dmbgr.getConnection();
+        Statement stmt = null;
+
+        try {
+
+            stmt = con.createStatement();
+            var sql = String.format("DELETE FROM PRODUCTS WHERE PRODUCT_CODE=%d", productCode);
+            stmt.executeUpdate(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                stmt.close();
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
     }

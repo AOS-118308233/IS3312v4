@@ -155,9 +155,7 @@
                             <div class="form-group row">
                                 <label for="category" class="col-4 col-form-label">Category</label> 
                                 <div class="col-8">
-                                    <label for="category">Category: </label>
-
-                                    <select name="category" id="categories">
+                                        <select name="category" id="categories">
                                         <option value="volvo">Teddy Bears</option>
                                         <option value="saab">Animals</option>
                                         <option value="mercedes">Branded Teddies</option>

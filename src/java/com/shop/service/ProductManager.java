@@ -22,38 +22,36 @@ public class ProductManager {
         return pDao.getTopProducts(9);
 
     }
-    
+
     public Product getProduct(String productCode) throws SQLException {
         ProductDAO productDAO = new ProductDAO();
         Product product = productDAO.getProductCode(productCode);
-        return product; 
+        return product;
     }
-    
+
     public ArrayList<Product> getAllProducts() {
         ProductDAO pDao = new ProductDAO();
         ArrayList<Product> productList = pDao.getTopProducts(9);
         return productList;
     }
-    
+
     public void insertProduct(Product nProduct) {
         ProductDAO pDao = new ProductDAO();
         pDao.insertProduct(nProduct);
-        return;
     }
-    
+
     public void updateProduct(Product nProduct) {
         ProductDAO pDao = new ProductDAO();
         pDao.updateProduct(nProduct);
-        return;
+
     }
-    
+
     public void deleteProduct(String productCode) {
         ProductDAO pDao = new ProductDAO();
         pDao.deleteProduct(productCode);
-        return;
+
     }
-    
-    
+
     public class getCategoryList {
 
     }
